@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Download } from "lucide-react";
 
 // Types
 type QA = [string, string];
@@ -235,6 +236,23 @@ const question3ddtc = [
 function uniquePush(list: string[], item: string) {
   if (!list.includes(item)) return [...list, item];
   return list;
+}
+
+function downloadCSV(data: Row[], filename: string) {
+  const csvContent = [
+    "Question,Answer",
+    ...data.map(row => `"${row.Question.replace(/"/g, '""')}","${row.Answer.replace(/"/g, '""')}"`)
+  ].join("\n");
+  
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(blob);
+  link.setAttribute("href", url);
+  link.setAttribute("download", filename);
+  link.style.visibility = "hidden";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 export default function Calculator() {
@@ -519,23 +537,38 @@ export default function Calculator() {
     return "";
   };
 
-  const SummaryTable = ({ rows }: { rows: Row[] }) => (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Question</TableHead>
-          <TableHead>Answer</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {rows.map((r, idx) => (
-          <TableRow key={idx}>
-            <TableCell className="align-top">{r.Question}</TableCell>
-            <TableCell className="align-top whitespace-pre-wrap">{r.Answer}</TableCell>
+  const SummaryTable = ({ rows, title }: { rows: Row[]; title: string }) => (
+    <div>
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-xl font-medium">{title}</h3>
+        {rows.length > 0 && (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => downloadCSV(rows, `${title.toLowerCase().replace(/[^a-z0-9]/g, '_')}.csv`)}
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Download CSV
+          </Button>
+        )}
+      </div>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Question</TableHead>
+            <TableHead>Answer</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {rows.map((r, idx) => (
+            <TableRow key={idx}>
+              <TableCell className="align-top">{r.Question}</TableCell>
+              <TableCell className="align-top whitespace-pre-wrap">{r.Answer}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 
   return (
@@ -559,22 +592,26 @@ export default function Calculator() {
         {/* Live summaries */}
         {(stage >= 1 || all1.length > 0) && (
           <section className="space-y-2">
-            <h3 className="text-xl font-medium">You need to talk to:</h3>
             {all1.length > 0 ? (
-              <SummaryTable rows={all1} />
+              <SummaryTable rows={all1} title="You need to talk to:" />
             ) : (
-              <p className="text-muted-foreground">No agencies selected yet.</p>
+              <>
+                <h3 className="text-xl font-medium">You need to talk to:</h3>
+                <p className="text-muted-foreground">No agencies selected yet.</p>
+              </>
             )}
           </section>
         )}
 
         {stage >= 1 && (
           <section className="space-y-2">
-            <h3 className="text-xl font-medium">Your timeline is:</h3>
             {all2.length > 0 ? (
-              <SummaryTable rows={all2} />
+              <SummaryTable rows={all2} title="Your timeline is:" />
             ) : (
-              <p className="text-muted-foreground">Answer Section 2 questions to see timelines.</p>
+              <>
+                <h3 className="text-xl font-medium">Your timeline is:</h3>
+                <p className="text-muted-foreground">Answer Section 2 questions to see timelines.</p>
+              </>
             )}
           </section>
         )}
