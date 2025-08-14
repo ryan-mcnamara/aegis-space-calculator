@@ -618,15 +618,16 @@ export default function Calculator() {
 
         {stage >= 3 && (
           <section className="space-y-2">
-            <h3 className="text-xl font-medium">Your costs are:</h3>
             {answer3.length > 0 ? (
-              <ul className="list-disc pl-6 space-y-1">
-                {answer3.map((c, i) => (
-                  <li key={i} className="whitespace-pre-wrap">{c}</li>
-                ))}
-              </ul>
+              <SummaryTable 
+                rows={answer3.map(cost => ({ Question: "Cost Item", Answer: cost }))} 
+                title="Your costs are:" 
+              />
             ) : (
-              <p className="text-muted-foreground">No costs computed.</p>
+              <>
+                <h3 className="text-xl font-medium">Your costs are:</h3>
+                <p className="text-muted-foreground">No costs computed.</p>
+              </>
             )}
           </section>
         )}
