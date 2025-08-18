@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/aegis-space-calculator">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/calculator" element={<Calculator />} />
