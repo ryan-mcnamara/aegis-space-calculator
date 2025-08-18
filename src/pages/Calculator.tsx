@@ -81,7 +81,7 @@ const question2fcc2: QA[] = [
   ],
   [
     "If licensing a commercial space station, will your non-geostationary satellite system use 20 or more earth stations?",
-    "6 months to 2 years depending on spectral allocation (update,test) \n",
+    "6 months to 2 years depending on spectral allocation \n",
   ],
   [
     "If licensing a commercial space station, will your non-geostationary satellite system use less than 20 earth stations?",
