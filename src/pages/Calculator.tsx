@@ -22,7 +22,7 @@ interface Row {
 const question1: QA[] = [
   [
     "Will you be communicating with a launch vehicle, spacecraft, satellite, or U.S. based earth station via inter-satellite link, uplink or downlink? ",
-    "FCC – Satellites and earth stations - test",
+    "FCC – Satellites and earth stations",
   ],
   [
     "Will you be responsible for authorizing the launch of a suborbital or orbital vehicle that’s not an Amateur Rocket? ",
