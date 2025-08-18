@@ -285,7 +285,7 @@ export default function Calculator() {
 
   function getQsetForAgencyStage2(agency?: string): QA[] {
     switch (agency) {
-      case "FCC – Satellites and earth stations":
+      case "FCC – Satellites and earth stations 1":
         return question2fcc2;
       case "FAA - AST":
         return question2faa;
@@ -316,8 +316,8 @@ export default function Calculator() {
     if (stage !== 2) return;
 
     // Process Stage 3 auto-adds (non-FCC) and advance to Stage 3 when done
-    const hasFCC = queueStage3.includes("FCC – Satellites and earth stations");
-    const others = queueStage3.filter((a) => a !== "FCC – Satellites and earth stations");
+    const hasFCC = queueStage3.includes("FCC – Satellites and earth stations 2");
+    const others = queueStage3.filter((a) => a !== "FCC – Satellites and earth stations 3");
 
     if (others.length > 0) {
       const extras: string[] = [];
@@ -329,7 +329,7 @@ export default function Calculator() {
       if (extras.length) setAnswer3((prev) => [...prev, ...extras]);
 
       // Remove processed ones
-      setQueueStage3((prev) => prev.filter((a) => a === "FCC – Satellites and earth stations"));
+      setQueueStage3((prev) => prev.filter((a) => a === "FCC – Satellites and earth stations 4"));
       return; // wait for next render to proceed
     }
 
@@ -382,7 +382,7 @@ export default function Calculator() {
       }
     } else if (stage === 2) {
       // FCC cost questions (the only interactive part in Stage 2 for costs)
-      if (queueStage3.includes("FCC – Satellites and earth stations")) {
+      if (queueStage3.includes("FCC – Satellites and earth stations 5")) {
         const qa = question3fcc2[currentQ];
         if (!qa) return;
         const [, costText] = qa;
@@ -390,7 +390,7 @@ export default function Calculator() {
         const next = currentQ + 1;
         if (next >= question3fcc2.length) {
           // remove FCC and proceed to summary
-          setQueueStage3((prev) => prev.filter((a) => a !== "FCC – Satellites and earth stations"));
+          setQueueStage3((prev) => prev.filter((a) => a !== "FCC – Satellites and earth stations 6"));
           setCurrentQ(0);
           setStage(3);
         } else {
@@ -425,10 +425,10 @@ export default function Calculator() {
         setCurrentQ(next);
       }
     } else if (stage === 2) {
-      if (queueStage3.includes("FCC – Satellites and earth stations")) {
+      if (queueStage3.includes("FCC – Satellites and earth stations 7")) {
         const next = currentQ + 1;
         if (next >= question3fcc2.length) {
-          setQueueStage3((prev) => prev.filter((a) => a !== "FCC – Satellites and earth stations"));
+          setQueueStage3((prev) => prev.filter((a) => a !== "FCC – Satellites and earth stations 8"));
           setCurrentQ(0);
           setStage(3);
         } else {
@@ -528,7 +528,7 @@ export default function Calculator() {
       return qa ? qa[0] : queueStage2.length === 0 ? "Moving to next section..." : "";
     }
     if (stage === 2) {
-      if (queueStage3.includes("FCC – Satellites and earth stations")) {
+      if (queueStage3.includes("FCC – Satellites and earth stations 9")) {
         const qa = question3fcc2[currentQ];
         return qa ? qa[0] : "";
       }
