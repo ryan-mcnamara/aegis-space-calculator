@@ -469,7 +469,7 @@ export default function Calculator() {
         While this calculator estimates regulatory costs for space activities, you may incur additional discretionary costs (e.g., legal fees,
         consultants) in preparing submissions.
       </p>
-      <p className="text-muted-foreground">For more resources, reach out to Aegis at hello@aegis.law.</p>
+      <p className="text-muted-foreground">For more resources, reach out to Aegis at contact-test@aegis.law.</p>
       <div className="text-sm">
         <h3 className="font-medium mb-2">Definitions</h3>
         <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
