@@ -441,7 +441,7 @@ export default function Calculator() {
   // UI helpers
   const renderIntro = () => (
     <section className="space-y-4 text-left max-w-4xl mx-auto">
-      <h1 className="text-3xl font-semibold">Space Regulatory Calculator --</h1>
+      <h1 className="text-3xl font-semibold">Space Regulatory Calculator</h1>
       <p className="text-muted-foreground">
         This calculator is for U.S. commercial space companies that want to understand the
         potential complexity, time, and cost involved in navigating the federal regulatory landscape.
