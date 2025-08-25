@@ -76,7 +76,7 @@ const question2fcc2: QA[] = [
     "12-18 months \n",
   ],
   [
-    "If licensing a commercial space station, will your system qualify as a small satellite system?",
+    "If licensing a commercial space station, will your system qualify as a small satellite or an in-space servicing, assembly, and manufacturing (ISAM) system?",
     "3-12 months \n",
   ],
   [
