@@ -195,15 +195,15 @@ const question3fcc2: QA[] = [
     "- FCC charges $2,555 and a regulatory fee of $12,330 (per license/call sign) for small satellite systems. ",
   ],
   [
-    "If licensing a space station, will your non-geostationary satellite system use 20 or more earth stations?",
-    "- FCC charges a $16,795 application fee and regulatory fee of $964,200.",
+    "If licensing a space station, will your non-geostationary satellite system be classified as a small constellation (less than 1,000 satellites)?",
+    "- FCC charges a $17,670 application fee and regulatory fee of $375,140.",
   ],
   [
-    "If licensing a space station, will your non-geostationary satellite system use less than 20 earth stations?",
-    "- FCC charges a $16,795 application fee and regulatory fee of $441,925.",
+    "If licensing a space station, will your non-geostationary satellite system be classified as a large constellation (greater than or equal to 1,000 satellites)?",
+    "- FCC charges a $17,670 application fee and regulatory fee of $1,917,390.",
   ],
   [
-    "If licensing a earth station, will your earth station be mobile?",
+    "If licensing an earth station, will your earth station be mobile?",
     "- FCC charges $955 and a $2,060 regulatory fee per authorization or registration for mobile earth stations. ",
   ],
   [
