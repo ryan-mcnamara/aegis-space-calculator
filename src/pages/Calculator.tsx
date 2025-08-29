@@ -184,14 +184,14 @@ const question3fcc2: QA[] = [
   ],
   [
     "Will the mission be commercial?",
-    "- FCC: Please note that regulatory fees will be due for authorizations for operational systems that are held as of October 1 of the previous year for commercial missions.\n",
+    "- FCC: Please note that as of FY2025, regulatory fees are assessed at the time of authorization rather than upon operation. This applies to all authorized systems that are held as of October 1 of the previous year for commercial missions.\n",
   ],
   [
     "If licensing a space station, will your space station operate in geostationary orbit? ",
-    "- FCC charges $3,965 and a regulatory fee of $144,155 for geostationary orbits. ",
+    "- FCC charges $4,175 and a regulatory fee of $141,790 for geostationary orbits. ",
   ],
   [
-    "If licensing a space station, will your system qualify as a small satellite system or an in-space servicing, assembly, and manufacturing system?",
+    "If licensing a space station, will your system qualify as a small satellite system or an in-space servicing, assembly, and manufacturing (ISAM) system?",
     "- FCC charges $2,425 and a regulatory fee of $12,215 for small satellite systems. ",
   ],
   [
