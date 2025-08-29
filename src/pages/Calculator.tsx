@@ -192,7 +192,7 @@ const question3fcc2: QA[] = [
   ],
   [
     "If licensing a space station, will your system qualify as a small satellite system or an in-space servicing, assembly, and manufacturing (ISAM) system?",
-    "- FCC charges $2,425 and a regulatory fee of $12,215 for small satellite systems. ",
+    "- FCC charges $2,555 and a regulatory fee of $12,330 (per license/call sign) for small satellite systems. ",
   ],
   [
     "If licensing a space station, will your non-geostationary satellite system use 20 or more earth stations?",
@@ -204,19 +204,19 @@ const question3fcc2: QA[] = [
   ],
   [
     "If licensing a earth station, will your earth station be mobile?",
-    "- FCC charges $910 and a $2610 regulatory fee for mobile earth stations. ",
+    "- FCC charges $955 and a $2,060 regulatory fee per authorization or registration for mobile earth stations. ",
   ],
   [
     "If licensing a earth station, will it be for a single site?",
-    "- FCC charges $400 and $575 regulatory fee for single sites. ",
+    "- FCC charges $425 and $2,060 regulatory fee for single sites. ",
   ],
   [
     "If licensing an earth station, will it be for ubiquitous use (not a single site)?",
-    "- FCC charges $400 and a $2610 regulatory fee for ubiquitous use. ",
+    "- FCC charges $425 and a $2,060 regulatory fee for ubiquitous use. ",
   ],
   [
     "If licensing a earth station, will it be for multiple sites?",
-    "- FCC charges $7,270 and a $2610 regulatory fee for multiple sites.",
+    "- FCC charges $7,650 and a $2,060 regulatory fee for multiple sites.",
   ],
 ];
 
