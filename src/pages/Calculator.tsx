@@ -216,7 +216,7 @@ const question3fcc2: QA[] = [
   ],
   [
     "If licensing a earth station, will it be for multiple sites?",
-    "- FCC charges $7,650 and a $2,060 regulatory fee for multiple sites.",
+    "- FCC charges $7,650 and a $2,060 per site regulatory fee for multiple sites.",
   ],
 ];
 
